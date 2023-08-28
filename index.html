@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Library</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="home">
+    <div class="header">
+        <h1 class="title">Personal Library</h1>
+    </div>
+        
+        <div class="container-fluid-large">
+            <div class="row  d-flex justify-content-center">
+              <div class="g-col-6">
+                <div class="card dis">
+                    <p style="color: blueviolet;">
+                        A simple library application is a program that helps manage a library's collection of books and allows users to perform tasks such as checking out books, returning books, searching for books, and so on. It typically includes features to keep track of book information, user information, and the borrowing status of each book. Users can interact with the application through a user-friendly interface.
+
+Here are the key components and functionalities of a simple library application:
+
+Book Management: The application allows the library staff to add, edit, and delete books from the library's collection. Each book may have attributes such as title, author, publication date.
+                      </p>
+                    <div class="row">
+                        <div class="col center">
+                          <li class="card x center">
+                              <a class="btn btn-outline-danger" href="#add_books">Add Books</a>
+                            </li>
+                        </div>
+                        <div class="col center">
+                          <li class="card x center">
+                              <a class="btn btn-outline-danger" href="#remove_books">Remove Books</a>
+                            </li>
+                        </div>
+                        <div class="col center">
+                          <li class="card x center">
+                              <a class="btn btn-outline-danger" href="#Search_books">Search Books</a>
+                            </li>
+                        </div>
+                        <div class="col center">
+                          <li class="card x center">
+                              <a class="btn btn-outline-danger" href="#List_books">List the Books</a>
+                            </li>
+                        </div>
+                        <div class="col center">
+                          <li class="card x center">
+                              <a class="btn btn-outline-danger" href="#Toggle">Change the status</a>
+                            </li>
+                          </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id="add_books">
+    <div class="header">
+    <h1 class="title">Add Books</h1>
+    </div>
+    <div class="container-fluid-large">
+        <div class="row  d-flex justify-content-center">
+          <div class="g-col-6">
+            <div class="card dis">
+                <form class="form-control" action="#">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Book's Name:</span>
+                        <input type="text" id="in1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                      </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Book's Author:</span>
+                        <input type="text" id="in2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                      </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Published Year:</span>
+                        <input type="text" id="in3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Price:$</span>
+                        <input type="text" id="in5" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Current Status</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                          <option selected>Choose...</option>
+                          <option id="in4" value="Read">Read</option>
+                          <option id="in4" value="UnRead">UnRead</option>
+                        </select>
+                      </div>
+                      <div class="d-grid gap-2 d-md-block">
+                        <button type="submit" class="btn btn-primary"  value="front" type="button" onclick="addBookdetailsfirst()">Add-First</button>
+                        <button type="submit" class="btn btn-primary" value="last" type="button" onclick="addBookdetailslast()">Add-Last</button>
+                      </div>
+                    </form>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div id="remove_books">
+    <div class="header">
+    <h1 class="title">Remove Books</h1>
+    </div>
+    <div class="container-fluid-large">
+        <div class="row  d-flex justify-content-center">
+          <div class="g-col-6">
+            <div class="card dis">
+                <form class="form-control" action="#">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Book Title:</span>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Title" id="input2">
+                            <button class="btn btn-outline-secondary" type="submit" onclick="removetitlewise()">Remove</button>
+                          </div>
+                      </div>
+
+                <div class="d-grid gap-2 d-md-block">
+                    <button type="submit" class="btn btn-primary"  value="front" type="button" onclick=" removeBookfirst()">Remove-First</button>
+                    <button type="submit" class="btn btn-primary" value="last" type="button" onclick="removeBookend()">Remove-Last</button>
+                  </div>
+                </form>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div id="Search_books">
+    <div class="header">
+    <h1 class="title">Search Books</h1>
+    </div>
+    <div class="container-fluid-large">
+        <div class="row  d-flex justify-content-center">
+          <div class="g-col-6">
+            <div class="card dis">
+                <form class="form-control" action="#" onsubmit="">
+
+                      <div class="input-group mb-3">
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="myTitles()">Display All Titles</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Book's title:</h1>
+                              </div>
+                              <div class="modal-body">
+                                <div id="test"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Book's Title:</span>
+                        <input type="text" id="boook" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal1" onclick="myBooks()">Display</button>
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Book's title:</h1>
+                              </div>
+                              <div class="modal-body">
+                                <div id="hcl"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Book's Author:</span>
+                        <input type="text" id="thor" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal100" onclick="myAuthor()">Display</button>
+                        <div class="modal fade" id="exampleModal100" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Book's title:</h1>
+                              </div>
+                              <div class="modal-body">
+                                <div id="authuro"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <p id="auth"></p>
+                      </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Published Year:</span>
+                        <input type="text" id="year" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2" onclick="myYear()">Display</button>
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">No Of Books:</h1>
+                              </div>
+                              <div class="modal-body">
+                                <div id="total"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <label class="input-group-text" for="statu">Status</label>
+                        <select class="form-select" id="statu">
+                          <option selected>Choose...</option>
+                          <option  value="Read">Read</option>
+                          <option  value="UnRead">UnRead</option>
+                        </select>
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="mystatus()">Display</button>
+
+                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Book's:</h1>
+                              </div>
+                              <div class="modal-body">
+                                <div id="option"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      </div>
+                </form>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div id="List_books">
+    <div class="header">
+    <h1 class="title">A Sequence of Books</h1>
+    </div>
+    <div class="container-fluid-large">
+        <div class="row  d-flex justify-content-center">
+          <div class="g-col-6">
+            <div class="card dis">
+                <form class="form-control" action="#" onsubmit="">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Start:</span>
+                        <input type="text" id="start" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <span class="input-group-text" id="inputGroup-sizing-default">End:</span>
+                        <input type="text" id="end" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal4" onclick="subArray()">Display</button>
+
+                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Book's:</h1>
+                              </div>
+                              <div class="modal-body">
+                                <div id="poke"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      </div>
+                </form>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="Toggle">
+    <div class="header">
+    <h1 class="title">Change status of Book</h1>
+    </div>
+    <div class="container-fluid-large">
+        <div class="row  d-flex justify-content-center">
+          <div class="g-col-6">
+            <div class="card dis">
+
+              <div class="input-group mb-3">
+                <!-- <button type="button" class="btn btn-outline-dark" value="Display" onclick="generateTable()">Display Details:</button> -->
+                <details open>
+                  <Summary onclick="generateTable()">Display Book:</Summary>
+                  <div>
+                    <table id="mytable" class="table table-dark">
+                      <tr>
+                      </tr>
+                    </table>
+                  </div>
+                </details>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Book's Title:</span>
+                <input type="text" id="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="sta">Status</label>
+                    <select class="form-select" id="sta">
+                      <option selected>Choose...</option>
+                      <option value="Read">Read</option>
+                      <option value="UnRead">UnRead</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal5" onclick="toggle()">set</button>
+
+                    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Book's:</h1>
+                          </div>
+                          <div class="modal-body">
+                            <div id="modi"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+    <script src="main.js"></script>
+</body>
+</html>
